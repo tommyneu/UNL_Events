@@ -187,7 +187,7 @@ class UCBCN
     {
         $values = array(
             'account_id'      => $account->id,
-            'uid'             => $uid,
+            'uid'             => trim(strtolower($uid)),
             'datecreated'     => date('Y-m-d H:i:s'),
             'uidcreated'      => $uidcreated,
             'datelastupdated' => date('Y-m-d H:i:s'),
@@ -340,7 +340,7 @@ class UCBCN
     public function getUser($uid)
     {
         $user      = UNL_UCBCN::factory('user');
-        $user->uid = $uid;
+        $user->uid =  trim(strtolower($uid));
 
         if ($user->find()) {
             $user->fetch();
