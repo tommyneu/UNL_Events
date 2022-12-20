@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44a14b849b7de9908e4d44f0cc39a57f",
+    "content-hash": "a44ebcc8a9623277fef8c252676144ce",
     "packages": [
         {
             "name": "jasig/phpcas",
@@ -12,21 +12,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/apereo/phpCAS.git",
-                "reference": "e19040a2b50c8883b0da7c204e5f5e907d5fb407"
+                "reference": "1685333f8abab3f5397391e2ad7b2ff0da7b92b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apereo/phpCAS/zipball/e19040a2b50c8883b0da7c204e5f5e907d5fb407",
-                "reference": "e19040a2b50c8883b0da7c204e5f5e907d5fb407",
+                "url": "https://api.github.com/repos/apereo/phpCAS/zipball/1685333f8abab3f5397391e2ad7b2ff0da7b92b1",
+                "reference": "1685333f8abab3f5397391e2ad7b2ff0da7b92b1",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
+                "ext-dom": "*",
                 "php": ">=7.1.0",
-                "psr/log": "^1.0.0"
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
             },
             "require-dev": {
-                "monolog/monolog": "^1.0.0",
+                "monolog/monolog": "^1.0.0 || ^2.0.0",
+                "phpstan/phpstan": "^1.5",
                 "phpunit/phpunit": ">=7.5"
             },
             "default-branch": true,
@@ -37,6 +39,9 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "source/CAS.php"
+                ],
                 "classmap": [
                     "source/"
                 ]
@@ -71,7 +76,7 @@
                 "issues": "https://github.com/apereo/phpCAS/issues",
                 "source": "https://github.com/apereo/phpCAS/tree/master"
             },
-            "time": "2021-08-08T12:54:31+00:00"
+            "time": "2022-12-02T12:55:52+00:00"
         },
         {
             "name": "michelf/php-smartypants",
@@ -126,6 +131,10 @@
                 "typographer",
                 "typography"
             ],
+            "support": {
+                "issues": "https://github.com/michelf/php-smartypants/issues",
+                "source": "https://github.com/michelf/php-smartypants/tree/1.6.0-beta1"
+            },
             "time": "2013-07-31T18:13:10+00:00"
         },
         {
@@ -171,24 +180,28 @@
                 "link",
                 "url"
             ],
+            "support": {
+                "issues": "https://github.com/misd-service-development/php-linkify/issues",
+                "source": "https://github.com/misd-service-development/php-linkify/tree/v1.1.4"
+            },
             "time": "2017-08-17T08:33:35+00:00"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v9.99.99",
+            "version": "v9.99.100",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
-                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/996434e5492cb4c3edcb9168db6fbb1359ef965a",
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a",
                 "shasum": ""
             },
             "require": {
-                "php": "^7"
+                "php": ">= 7"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*|5.*",
@@ -216,20 +229,25 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-02T15:55:56+00:00"
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https://github.com/paragonie/random_compat/issues",
+                "source": "https://github.com/paragonie/random_compat"
+            },
+            "time": "2020-10-15T08:29:30+00:00"
         },
         {
             "name": "pear/http_request2",
-            "version": "v2.4.2",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/HTTP_Request2.git",
-                "reference": "84da432fbbf615593bd8aa25408aca3478b77502"
+                "reference": "db4ce7844f838d3adca0513a77420c0fec22ed2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/HTTP_Request2/zipball/84da432fbbf615593bd8aa25408aca3478b77502",
-                "reference": "84da432fbbf615593bd8aa25408aca3478b77502",
+                "url": "https://api.github.com/repos/pear/HTTP_Request2/zipball/db4ce7844f838d3adca0513a77420c0fec22ed2d",
+                "reference": "db4ce7844f838d3adca0513a77420c0fec22ed2d",
                 "shasum": ""
             },
             "require": {
@@ -238,7 +256,7 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^3.7|^4.8|^5.7"
+                "yoast/phpunit-polyfills": "^1.0.0"
             },
             "suggest": {
                 "ext-curl": "Allows using cURL as a request backend.",
@@ -272,10 +290,10 @@
             ],
             "support": {
                 "docs": "https://pear.php.net/manual/en/package.http.http-request2.php",
-                "issues": "https://pear.php.net/bugs/search.php?cmd=display&package_name[]=HTTP_Request2",
+                "issues": "https://github.com/pear/HTTP_Request2/issues",
                 "source": "https://github.com/pear/HTTP_Request2"
             },
-            "time": "2020-09-24T22:07:33+00:00"
+            "time": "2022-01-06T18:20:25+00:00"
         },
         {
             "name": "pear/net_url2",
@@ -347,23 +365,23 @@
         },
         {
             "name": "pear/pear_exception",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/PEAR_Exception.git",
-                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7"
+                "reference": "b14fbe2ddb0b9f94f5b24cf08783d599f776fff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
-                "reference": "dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/b14fbe2ddb0b9f94f5b24cf08783d599f776fff0",
+                "reference": "b14fbe2ddb0b9f94f5b24cf08783d599f776fff0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=4.4.0"
+                "php": ">=5.2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "phpunit/phpunit": "<9"
             },
             "type": "class",
             "extra": {
@@ -402,7 +420,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=PEAR_Exception",
                 "source": "https://github.com/pear/PEAR_Exception"
             },
-            "time": "2019-12-10T10:24:42+00:00"
+            "time": "2021-03-21T15:43:46+00:00"
         },
         {
             "name": "psr/http-message",
@@ -452,20 +470,23 @@
                 "request",
                 "response"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
-            "version": "1.1.2",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
-                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +510,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -499,7 +520,10 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-11-01T11:05:21+00:00"
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "slim/csrf",
@@ -549,6 +573,10 @@
                 "middleware",
                 "slim"
             ],
+            "support": {
+                "issues": "https://github.com/slimphp/Slim-Csrf/issues",
+                "source": "https://github.com/slimphp/Slim-Csrf/tree/master"
+            },
             "time": "2018-08-22T16:12:18+00:00"
         },
         {
@@ -603,29 +631,97 @@
                 "redis",
                 "sessions"
             ],
+            "support": {
+                "issues": "https://github.com/tedious/Stash/issues",
+                "source": "https://github.com/tedious/Stash/tree/master"
+            },
             "time": "2015-01-17T07:51:57+00:00"
         },
         {
-            "name": "unl/php-dwt-parser",
-            "version": "v1.0.1",
+            "name": "tommyneu/savvy",
+            "version": "master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/unl/phpdwtparser.git",
-                "reference": "1de8770c4d8675771d1529c2f81d96e0aa51931f"
+                "url": "https://github.com/tommyneu/Savvy.git",
+                "reference": "master"
+            },
+            "type": "library"
+        },
+        {
+            "name": "unl/html-minifier",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unl/html-minifier.git",
+                "reference": "d533b6b73db3c85168dd722894169f839ca7a1fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unl/phpdwtparser/zipball/1de8770c4d8675771d1529c2f81d96e0aa51931f",
-                "reference": "1de8770c4d8675771d1529c2f81d96e0aa51931f",
+                "url": "https://api.github.com/repos/unl/html-minifier/zipball/d533b6b73db3c85168dd722894169f839ca7a1fa",
+                "reference": "d533b6b73db3c85168dd722894169f839ca7a1fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "^v2.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "zz": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Google inc",
+                    "homepage": "http://www.chromium.org/blink",
+                    "role": "Author"
+                },
+                {
+                    "name": "zaininnari",
+                    "homepage": "https://github.com/zaininnari/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The Blink HTMLTokenizer ported to PHP.",
+            "homepage": "https://github.com/unl/html-minifier",
+            "keywords": [
+                "Blink",
+                "HTML minify",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/unl/html-minifier/tree/0.5.1"
+            },
+            "time": "2020-07-16T18:08:39+00:00"
+        },
+        {
+            "name": "unl/php-dwt-parser",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unl/phpdwtparser.git",
+                "reference": "40b75f42a301dadfbf978995cfe535693099b006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unl/phpdwtparser/zipball/40b75f42a301dadfbf978995cfe535693099b006",
+                "reference": "40b75f42a301dadfbf978995cfe535693099b006",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
-                "zaininnari/html-minifier": "*",
+                "unl/html-minifier": "*",
                 "zendframework/zend-code": "^2.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^5.7"
             },
             "bin": [
                 "bin/createTemplates.php"
@@ -654,20 +750,24 @@
             ],
             "description": "A PHP library for parsing DWT files and turning them into PHP classes",
             "homepage": "http://wdn.unl.edu/",
-            "time": "2016-01-05T21:35:46+00:00"
+            "support": {
+                "issues": "https://github.com/unl/phpdwtparser/issues",
+                "source": "https://github.com/unl/phpdwtparser/tree/v1.0.2"
+            },
+            "time": "2020-07-16T19:05:41+00:00"
         },
         {
             "name": "unl/php-wdn-templates",
-            "version": "v5.3.4",
+            "version": "v5.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unl/phpunltemplates.git",
-                "reference": "845d8e05a6ae636797b350659f64b5f03b466166"
+                "reference": "2504d6d02b67910925abc3dc92e148abb13ad4e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unl/phpunltemplates/zipball/845d8e05a6ae636797b350659f64b5f03b466166",
-                "reference": "845d8e05a6ae636797b350659f64b5f03b466166",
+                "url": "https://api.github.com/repos/unl/phpunltemplates/zipball/2504d6d02b67910925abc3dc92e148abb13ad4e2",
+                "reference": "2504d6d02b67910925abc3dc92e148abb13ad4e2",
                 "shasum": ""
             },
             "require": {
@@ -713,9 +813,35 @@
             "homepage": "http://wdn.unl.edu/",
             "support": {
                 "issues": "https://github.com/unl/phpunltemplates/issues",
-                "source": "https://github.com/unl/phpunltemplates/tree/v5.3.4"
+                "source": "https://github.com/unl/phpunltemplates/tree/v5.3.5"
             },
-            "time": "2022-01-24T19:05:47+00:00"
+            "time": "2022-11-14T22:05:29+00:00"
+        },
+        {
+            "name": "unl/reg-exp-router",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unl/RegExpRouter.git",
+                "reference": "88754cac85426a5f8c8479fd93fb854435e5dae9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unl/RegExpRouter/zipball/88754cac85426a5f8c8479fd93fb854435e5dae9",
+                "reference": "88754cac85426a5f8c8479fd93fb854435e5dae9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "RegExpRouter": "src/"
+                }
+            },
+            "support": {
+                "source": "https://github.com/unl/RegExpRouter/tree/v0.1.2",
+                "issues": "https://github.com/unl/RegExpRouter/issues"
+            },
+            "time": "2014-12-16T20:47:31+00:00"
         },
         {
             "name": "unl/unl_cache_lite",
@@ -743,57 +869,6 @@
                 "issues": "https://github.com/unlpear/UNL_Cache_Lite/issues"
             },
             "time": "2020-12-10T21:17:32+00:00"
-        },
-        {
-            "name": "zaininnari/html-minifier",
-            "version": "0.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zaininnari/html-minifier.git",
-                "reference": "5b94d85705626f9bb33b7c667bc4400088ed4ece"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zaininnari/html-minifier/zipball/5b94d85705626f9bb33b7c667bc4400088ed4ece",
-                "reference": "5b94d85705626f9bb33b7c667bc4400088ed4ece",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "zz": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "The BSD 3-Clause License"
-            ],
-            "authors": [
-                {
-                    "name": "Google inc",
-                    "homepage": "http://www.chromium.org/blink",
-                    "role": "Author"
-                },
-                {
-                    "name": "zaininnari",
-                    "homepage": "https://github.com/zaininnari/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "The Blink HTMLTokenizer ported to PHP.",
-            "homepage": "https://github.com/zaininnari/html-minifier",
-            "keywords": [
-                "Blink",
-                "HTML minify",
-                "php"
-            ],
-            "time": "2015-08-18T14:10:55+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -845,6 +920,10 @@
                 "code",
                 "zf2"
             ],
+            "support": {
+                "issues": "https://github.com/zendframework/zend-code/issues",
+                "source": "https://github.com/zendframework/zend-code/tree/release-2.6"
+            },
             "abandoned": "laminas/laminas-code",
             "time": "2016-04-20T17:26:42+00:00"
         },
@@ -900,6 +979,10 @@
                 "events",
                 "zf2"
             ],
+            "support": {
+                "issues": "https://github.com/zendframework/zend-eventmanager/issues",
+                "source": "https://github.com/zendframework/zend-eventmanager/tree/master"
+            },
             "abandoned": "laminas/laminas-eventmanager",
             "time": "2018-04-25T15:33:34+00:00"
         }
@@ -909,11 +992,12 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "michelf/php-smartypants": 10,
-        "jasig/phpcas": 20
+        "jasig/phpcas": 20,
+        "tommyneu/savvy": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
