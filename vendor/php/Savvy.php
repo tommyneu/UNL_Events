@@ -649,6 +649,23 @@ class Savvy
     // -----------------------------------------------------------------
     
     /**
+     * Return the original object if the given object is a proxy
+     *
+     * @param mixed $object
+     * @return mixed
+     */
+    public function getRawObject($object)
+    {
+        $rawObject = $object;
+
+        if ($object instanceof Savvy_ObjectProxy) {
+            $rawObject = $object->getRawObject();
+        }
+
+        return $rawObject;
+    }
+
+    /**
      * Render context data through a template.
      * 
      * This method allows you to render data through a template. Typically one
