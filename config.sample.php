@@ -6,24 +6,10 @@
  * @author bbieber
  */
 
-function autoload($class)
-{
-    $class = str_replace(array('_', '\\'), '/', $class);
-    include $class . '.php';
-}
-
-spl_autoload_register('autoload');
-
-set_include_path(
-    __DIR__ . '/src' . PATH_SEPARATOR
-    . __DIR__ . '/vendor/php' . PATH_SEPARATOR
-    . __DIR__ . '/vendor/unl_submodules/RegExpRouter/src'
-);
-
-require __DIR__ . '/vendor/composer/autoload.php';
-
 ini_set('display_errors', true);
 error_reporting(E_ALL);
+
+include __DIR__ . '/vendor/autoload.php';
 
 UNL\UCBCN::$main_calendar_id = 1;
 UNL\UCBCN\Frontend\Controller::$url = '/';

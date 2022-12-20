@@ -12,21 +12,16 @@
  * @license   http://www1.unl.edu/wdn/wiki/Software_License BSD License
  * @link      http://code.google.com/p/unl-event-publisher/
  */
-namespace UNL\UCBCN\Frontend;
+// namespace UNL\UCBCN\Frontend;
 
-$config_file = __DIR__ . '/../config.sample.php';
-
-if (file_exists(__DIR__ . '/../config.inc.php')) {
-    $config_file = __DIR__ . '/../config.inc.php';
+if (file_exists(dirname(__FILE__).'/../config.inc.php')) {
+    require_once dirname(__FILE__).'/../config.inc.php';
+} else {
+    require dirname(__FILE__).'/../config.sample.php';
 }
-require_once $config_file;
-
-require_once __DIR__ . '/../vendor/composer/autoload.php';
-
-use RegExpRouter as RegExpRouter;
 
 $routes = include __DIR__ . '/../data/routes.php';
-$router = new RegExpRouter\Router(array('baseURL' => Controller::$url));
+$router = new RegExpRouter\Router(array('baseURL' => UNL\UCBCN\Frontend\Controller::$url));
 $router->setRoutes($routes);
 if (isset($_GET['model'])) {
     // Prevent injecting a specific model through the web interface
@@ -35,18 +30,19 @@ if (isset($_GET['model'])) {
 
 try {
     // Initialize Controller, and construct everything the user requested
-    $frontend = new Controller($router->route($_SERVER['REQUEST_URI'], $_GET));
+    $controller = new UNL\UCBCN\Frontend\Controller($router->route($_SERVER['REQUEST_URI'], $_GET));
 
     // Now render what the user has requested
-    $savvy = new OutputController($frontend);
-    $savvy->addGlobal('frontend', $frontend);
+    $outputcontroller = new UNL\UCBCN\Frontend\OutputController($controller);
+    $outputcontroller->addGlobal('controller', $controller);
+    $outputcontroller->setTemplatePath(dirname(__FILE__).'/templates/html');
 
     if (isset($siteNotice)) {
-        $savvy->addGlobal('siteNotice', $siteNotice);
+        $outputcontroller->addGlobal('siteNotice', $siteNotice);
     }
 
-    echo $savvy->render($frontend);
-}  catch (\Exception $e) {
+    echo $outputcontroller->render($frontend);
+}  catch (UNL\UCBCN\Frontend\Exception $e) {
 
     header('HTTP/1.1 ' . $e->getCode() .' ' . $e->getMessage());
     header('Status: ' . $e->getCode() .' ' . $e->getMessage());
