@@ -479,4 +479,44 @@ class EventInstance implements RoutableInterface
     {
         return new MonthWidget($this->options);
     }
+
+    public function getEventMicrodataJSON() {
+        // $timezoneDateTime = new \UNL\UCBCN\TimezoneDateTime($this->eventdatetime->timezone);
+        // $location   = $this->eventdatetime->getLocation();
+        // $eventTypes = $this->event->getEventTypes();
+        // $webcasts   = $this->event->getWebcasts();
+        // $documents  = $this->event->getDocuments();
+        // $contacts   = $this->event->getPublicContacts();
+        // $originCalendar = $this->event->getOriginCalendar();
+
+        $micro_data = array();
+
+        $micro_data['@context'] = "https://schema.org";
+        $micro_data['@type'] = "Event";
+        $micro_data['name'] = $this->event->displayTitle($this);
+        // $micro_data['startDate'] = $timezoneDateTime->format($this->getStartTime(),'c');
+        // $micro_data['startDate'] = $timezoneDateTime->format($this->getStartTime(),'c');
+
+        return json_encode($micro_data);
+    }
+
+    public function getEventMicrodata() {
+        // $timezoneDateTime = new \UNL\UCBCN\TimezoneDateTime($this->eventdatetime->timezone);
+        // $location   = $this->eventdatetime->getLocation();
+        // $eventTypes = $this->event->getEventTypes();
+        // $webcasts   = $this->event->getWebcasts();
+        // $documents  = $this->event->getDocuments();
+        // $contacts   = $this->event->getPublicContacts();
+        // $originCalendar = $this->event->getOriginCalendar();
+
+        // $micro_data = array();
+
+        // $micro_data['@context'] = "https://schema.org";
+        // $micro_data['@type'] = "Event";
+        // $micro_data['name'] = $this->event->displayTitle($this);
+        // $micro_data['startDate'] = $timezoneDateTime->format($this->getStartTime(),'c');
+        // $micro_data['startDate'] = $timezoneDateTime->format($this->getStartTime(),'c');
+
+        return array('red', 'blue', 'green');
+    }
 }

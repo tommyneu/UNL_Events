@@ -17,9 +17,9 @@ if (empty($timezoneDisplay) || empty($timezoneDisplay->getTimezone())) {
     </svg>
     <span class="dcf-sr-only">Date:</span>
     <?php if (!empty($starttime)): ?>
-        <time class="dtstart" itemprop="startDate" datetime="<?php echo $timezoneDisplay->format($starttime, $context->eventdatetime->timezone, 'c') ?>"><?php echo $timezoneDisplay->format($starttime, $context->eventdatetime->timezone,'M. j, Y') ?></time>
+        <time class="dtstart" datetime="<?php echo $timezoneDisplay->format($starttime, $context->eventdatetime->timezone, 'c') ?>"><?php echo $timezoneDisplay->format($starttime, $context->eventdatetime->timezone,'M. j, Y') ?></time>
     <?php endif; ?>
-    <?php if (!empty($endtime) && $context->isOngoing()): ?>&ndash; <time class="dtend"  itemprop="endDate" datetime="<?php echo $timezoneDisplay->format($endtime, $context->eventdatetime->timezone,'c') ?>"><?php echo $timezoneDisplay->format($endtime, $context->eventdatetime->timezone,'M. j, Y')?></time>
+    <?php if (!empty($endtime) && $context->isOngoing()): ?>&ndash; <time class="dtend" datetime="<?php echo $timezoneDisplay->format($endtime, $context->eventdatetime->timezone,'c') ?>"><?php echo $timezoneDisplay->format($endtime, $context->eventdatetime->timezone,'M. j, Y')?></time>
     <?php endif; ?>
 </span>
 <span class="time-wrapper">
