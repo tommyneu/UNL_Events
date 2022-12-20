@@ -3,7 +3,7 @@
     <div class='vcalendar'>
         <div class='vevent'>
             
-            <script >
+            <script type="application/ld+json">
                 <?php $event_microdata = $context->getEventMicrodata(); ?>
                 <?php $raw_microdata = $savvy->getRawObject($event_microdata); ?>
                 <?php echo json_encode($raw_microdata); ?>
