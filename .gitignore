@@ -12,3 +12,5 @@
 install
 */.DS_Store
 .idea
+vendor_old/
+vendor/
