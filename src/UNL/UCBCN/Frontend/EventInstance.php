@@ -496,6 +496,75 @@ class EventInstance implements RoutableInterface
         $micro_data['name'] = $this->event->displayTitle($this);
         $micro_data['startDate'] = $timezoneDateTime->format($this->getStartTime(),'c');
         $micro_data['endDate'] = $timezoneDateTime->format($this->getEndTime(),'c');
+        
+
+        $location = array();
+        if ($location) {
+            $location['@type'] = "Place";
+            $location['name'] = $location->name;
+            $location['address'] = array();
+
+            $location['address']['@type'] = "PostalAddress";
+            //      'LocationID'    => $location->id,
+            //     'LocationName'  => $location->name,
+            //     'LocationTypes' => array('LocationType' => $location->type),
+            //     'Address' => array(
+            //         'Room'                 => $location->room,
+            //         'BuildingName'         => $location->name,
+            //         'CityName'             => $location->city,
+            //         'PostalZone'           => $location->zip,
+            //         'CountrySubentityCode' => $location->state,
+            //         'Country' => array(
+            //             'IdentificationCode' => 'US',
+            //             'Name'               => 'United States',
+            //         ),
+            //     ),
+            //     'Phones' => array(
+            //         0 => array(
+            //             'PhoneNumber' => $location->phone,
+            //         )
+            //     ),
+            //     'WebPages' => array(
+            //         0 => array(
+            //             'Title' => 'Location Web Page',
+            //             'URL'   => $location->webpageurl,
+            //         )
+            //     ),
+            //     'MapLinks' => array(
+            //         0 => $location->mapurl,
+            //     ),
+            //     'LocationHours'        => $location->hours,
+            //     'Directions'           => $location->directions,
+            //     'AdditionalPublicInfo' => $location->additionalpublicinfo,
+            // );
+        }
+
+        // "location": {
+        //     "@type": "Place",
+        //     "name": "Snickerpark Stadium",
+        //     "address": {
+        //       "@type": "PostalAddress",
+        //       "streetAddress": "100 West Snickerpark Dr",
+        //       "addressLocality": "Snickertown",
+        //       "postalCode": "19019",
+        //       "addressRegion": "PA",
+        //       "addressCountry": "US"
+        //     }
+        //   },
+
+
+
+
+
+
+
+        $micro_data['eventAttendanceMode'] = "https://schema.org/OfflineEventAttendanceMode";
+
+        if ($this->event->isCanceled($this)) {
+            $micro_data['eventStatus'] = "https://schema.org/EventCancelled";
+        }else{
+            $micro_data['eventStatus'] = "https://schema.org/EventScheduled";
+        }
 
         return $micro_data;
     }
