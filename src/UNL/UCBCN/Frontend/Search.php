@@ -87,9 +87,14 @@ class Search extends EventListing implements RoutableInterface
 
                 'event.description LIKE \'%'.self::escapeString($this->search_query).'%\' OR '.
                 '(location.name LIKE \'%'.self::escapeString($this->search_query).'%\')) AND '.
-                '(e.starttime >= CURDATE() OR '.
-                'e.endtime > CURDATE() OR ' .
-                'recurringdate.recurringdate >= CURDATE())';
+                'IF (recurringdate.recurringdate IS NULL,
+                    e.starttime,
+                    CONCAT(DATE_FORMAT(recurringdate.recurringdate,"%Y-%m-%d"),DATE_FORMAT(e.starttime," %H:%i:%s"))
+                ) >= NOW() OR
+                IF (recurringdate.recurringdate IS NULL,
+                    e.endtime,
+                    CONCAT(DATE_FORMAT(recurringdate.recurringdate,"%Y-%m-%d"),DATE_FORMAT(e.endtime," %H:%i:%s"))
+                ) >= NOW()'
         }
 
         // Adds filter for event type
