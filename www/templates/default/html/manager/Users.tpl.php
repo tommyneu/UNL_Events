@@ -9,7 +9,11 @@
 	//$calendar = Calendar::getByShortname($this->options['calendar_shortname']);
 ?>
 
-<h1>Users on this Calendar</h1>
+<div class="dcf-d-flex dcf-flex-wrap dcf-flex-row dcf-jc-between dcf-ai-center dcf-mb-6 dcf-row-gap-3">
+    <h1 class="dcf-m-0">Users on this Calendar</h1>
+    <a class="dcf-btn dcf-btn-primary" href="<?php echo $base_manager_url . $context->calendar->shortname ?>/users/new/">Add User</a>
+</div>
+
 <ul role="list" class="dcf-list-inline dcf-mb-6 dcf-d-flex dcf-flex-wrap dcf-flex-row dcf-gap-6" id="userList">
     <?php foreach($context->getUsers() as $user): ?>
         <li class="dcf-rounded dcf-relative unl-bg-lightest-gray dcf-m-0 dcf-p-0 dcf-mt-1">
@@ -56,34 +60,3 @@
         </li>
     <?php endforeach; ?>
 </ul>
-<div>
-    <table class="dcf-table dcf-table-bordered dcf-w-100%">
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($context->getUsers() as $user): ?>
-            <tr>
-                <td>
-                    <?php echo $user->uid; ?>
-                </td>
-                <td class="small-center table-actions">
-                    <a class="dcf-btn dcf-btn-primary" href="<?php echo $user->getEditPermissionsURL($context->calendar) ?>">Edit Permissions</a>
-                    <br class="dcf-d-none small-block" /><br class="dcf-d-none small-block" />
-                    <form method="post" action="<?php echo $user->getDeletePermissionsURL($context->calendar) ?>" class="dcf-form delete-form">
-                        <input type="hidden" name="<?php echo $controller->getCSRFHelper()->getTokenNameKey() ?>" value="<?php echo $controller->getCSRFHelper()->getTokenName() ?>" />
-                        <input type="hidden" name="<?php echo $controller->getCSRFHelper()->getTokenValueKey() ?>" value="<?php echo $controller->getCSRFHelper()->getTokenValue() ?>">
-                        <input type="hidden" name="user_uid" value="<?php echo $user->uid ?>" />
-                        <button class="dcf-btn dcf-btn-secondary" type="submit">Remove</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-       <?php endforeach; ?>
-    </table>
-</div>
-<br>
-<a class="dcf-btn dcf-btn-primary" href="<?php echo $base_manager_url . $context->calendar->shortname ?>/users/new/">Add User</a>
