@@ -139,4 +139,35 @@ class User extends Record
             $perm->delete();
         }
     }
+
+    /**
+     * returns the name for a user
+     *
+     * @return string|false
+     */
+    public function getFullName()
+    {
+        $vcard = self::getVCard($this->uid);
+        if ($vcard === false) { return false; }
+
+        $matches = array();
+        preg_match_all('/FN:(.*)/',$vcard, $matches);
+        if (isset($matches[1][0]) && $matches[1][0] != ' ') {
+            return $matches[1][0];
+        }
+
+        return false;
+    }
+
+    /**
+     * Gets a vcard for the given uid.
+     *
+     * @param string $uid
+     * @return string|false
+     */
+    public static function getVCard($uid)
+    {
+        $vcard = @file_get_contents('https://directory.unl.edu/vcards/'.$uid);
+        return $vcard;
+    }
 }

@@ -272,3 +272,24 @@
   border: 1px solid red;
 }
 /* End: CropperJS Styles */
+
+#dcf-main #userList li {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 14ch;
+}
+#dcf-main #userList li .userList_profile_image {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 1 / 1;
+}
+
+#dcf-main #userList li .userList_name{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#dcf-main #userList li .userList_delete_form{
+  translate: 50% -50%;
+}
