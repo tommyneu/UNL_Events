@@ -42,11 +42,20 @@
                 <a class="dcf-btn dcf-btn-secondary dcf-txt-xs" href="<?php echo $user->getEditPermissionsURL($context->calendar); ?>">Edit</a>
             </p>
             <div class="userList_delete_form dcf-absolute dcf-top-0 dcf-right-0">
-                <form method="post" action="<?php echo $user->getDeletePermissionsURL($context->calendar); ?>" class="dcf-form delete-form">
+                <form
+                    method="post"
+                    action="<?php echo $user->getDeletePermissionsURL($context->calendar); ?>"
+                    class="dcf-form delete-form"
+                    onsubmit="return confirm('Are you sure you want to remove '<?php echo $user->uid; ?>' from the calendar \'<?php echo $context->calendar->name; ?>\' ?');"
+                >
                     <input type="hidden" name="<?php echo $controller->getCSRFHelper()->getTokenNameKey(); ?>" value="<?php echo $controller->getCSRFHelper()->getTokenName(); ?>" />
                     <input type="hidden" name="<?php echo $controller->getCSRFHelper()->getTokenValueKey(); ?>" value="<?php echo $controller->getCSRFHelper()->getTokenValue(); ?>">
                     <input type="hidden" name="user_uid" value="<?php echo $user->uid; ?>" />
-                    <button class="dcf-btn dcf-btn-primary dcf-circle dcf-h-6 dcf-w-6 dcf-p-0 dcf-m-0 dcf-d-flex dcf-jc-center dcf-ai-center" type="submit" value="Remove" title="Remove">
+                    <button
+                        class="dcf-btn dcf-btn-primary dcf-circle dcf-h-6 dcf-w-6 dcf-p-0 dcf-m-0 dcf-d-flex dcf-jc-center dcf-ai-center"
+                        type="submit"
+                        title="Remove"
+                    >
                         <svg class="dcf-h-4 dcf-w-4 dcf-fill-current dcf-d-block"
                             width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                         <path style="rotate: 45deg; transform-origin: center center;"
