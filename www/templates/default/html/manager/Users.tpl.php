@@ -21,7 +21,9 @@
                     $profile_image_src = "https://directory.unl.edu/images/default-avatar-800.jpg";
                 }
             ?>
-            <img class="userList_profile_image dcf-p-2 dcf-w-max-100% dcf-h-max-100% dcf-w-auto dcf-h-auto dcf-obj-fit-cover" src="<?php echo $profile_image_src; ?>">
+            <div class="userList_profile_image dcf-ratio dcf-ratio-1x1 dcf-w-auto dcf-b-solid dcf-b-1 unl-b-light-gray dcf-m-2">
+                <img class="dcf-ratio-child dcf-obj-fit-cover" src="<?php echo $profile_image_src; ?>">
+            </div>
             <p class="userList_name dcf-txt-xs dcf-txt-center dcf-p-2 dcf-pt-0 dcf-m-0 dcf-lh-1">
                 <?php if ($fullName !== false): ?>
                     <span> <?php echo $fullName; ?></span>
