@@ -38,6 +38,9 @@
                     <?php echo $user->uid; ?>
                 </a>
             </p>
+            <p class="userList_edit_permissions dcf-p-0 dcf-m-0 dcf-mb-3 dcf-txt-center">
+                <a class="dcf-btn dcf-btn-secondary dcf-txt-xs" href="<?php echo $user->getEditPermissionsURL($context->calendar); ?>">Edit</a>
+            </p>
             <div class="userList_delete_form dcf-absolute dcf-top-0 dcf-right-0">
                 <form method="post" action="<?php echo $user->getDeletePermissionsURL($context->calendar); ?>" class="dcf-form delete-form">
                     <input type="hidden" name="<?php echo $controller->getCSRFHelper()->getTokenNameKey(); ?>" value="<?php echo $controller->getCSRFHelper()->getTokenName(); ?>" />
@@ -54,9 +57,6 @@
                     </button>
                 </form>
             </div>
-            <p class="userList_edit_permissions dcf-p-0 dcf-m-0 dcf-mb-3 dcf-txt-center">
-                <a class="dcf-btn dcf-btn-secondary dcf-txt-xs" href="<?php echo $user->getEditPermissionsURL($context->calendar); ?>">Edit</a>
-            </p>
         </li>
     <?php endforeach; ?>
 </ul>
